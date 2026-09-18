@@ -11,7 +11,6 @@ REST API untuk sistem Task Management yang dibangun menggunakan framework Adonis
 * AI Integration: Google Gemini API via SDK @google/genai
 
 2. Struktur Database
-3. 
 Sistem menggunakan 4 tabel utama sesuai kebutuhan spesifikasi:
 * users: id, name, email, password, role ('admin', 'user').
 * projects: id, name, description, created_by (fk ke users).
@@ -49,7 +48,7 @@ npm run dev
 ```
 
 5. Perancangan AI Prompt Engineering
-Fitur POST /ai/command menggunakan Google Gemini API (model gemini-2.5-flash) dengan ketentuan teknis berikut:
+Fitur POST /ai/command menggunakan Google Gemini API dengan ketentuan teknis berikut:
 a. System Instruction dan Guardrail Keamanan
 Model diinstruksikan secara spesifik hanya boleh mengembalikan aksi untuk tabel tasks (CREATE, UPDATE, DELETE).
 Diberikan pembatasan tegas bahwa model dilarang memanipulasi atau menghapus data user. Jika input mengandung perintah terkait perubahan data user, AI diarahkan untuk menolak perintah tersebut melalui flag rejection.
