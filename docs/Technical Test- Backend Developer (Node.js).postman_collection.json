@@ -1,0 +1,423 @@
+{
+  "info": {
+    "_postman_id": "aa7ad07a-55fb-4b88-b112-15de53a33f76",
+    "name": "Technical Test: Backend Developer (Node.js)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "40127583"
+  },
+  "item": [
+    {
+      "name": "Project (Admin)",
+      "item": [
+        {
+          "name": "Daftar Project",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer oat_MTQ.WUQ1SVhhOUNVRERQcGppa3YzcFVmMDFmTGpqdHJHOEFNOC1ub29HbjQxODg0MjUzODE",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3333/projects",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3333",
+              "path": [
+                "projects"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Tambah Project",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer oat_Nw.a19ZMFp5bHhRaWtnd0tfbjUyNElkQnFycHpZTkZ2d2hyS2U0N1BkbDI3NDY3MjkzNjg",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Project Dashboard AI\",\r\n  \"description\": \"Dashboard monitoring tugas internal\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3333/projects",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3333",
+              "path": [
+                "projects"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Melihat detail proyek spesifik",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer oat_OQ.QUtDU3VqRW9jbXI4RlFCTlR2ZUNyazFRQktvWGdBOVRaN2p1ckR1VzE2ODUzNTA4NDM",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3333/projects/1/tasks",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3333",
+              "path": [
+                "projects",
+                "1",
+                "tasks"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Memperbarui proyek",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer oat_MTU.bGxmMEh2SmN4SEUyNHNjaTlwd2cyam1LRHNDM2Yxd3lCYzVEYkdheDE5MzIxMjAxOQ",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"E-Commerce Platform Revamp v2\",\r\n  \"description\": \"Pembaruan arsitektur backend, penambahan payment gateway, dan optimasi performa.\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3333/projects/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3333",
+              "path": [
+                "projects",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Projek",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        }
+      ],
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {},
+            "exec": [
+              ""
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {},
+            "exec": [
+              ""
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Uji Endpoint AI Command",
+      "item": [
+        {
+          "name": "Perintah Berhasil",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer oat_Nw.a19ZMFp5bHhRaWtnd0tfbjUyNElkQnFycHpZTkZ2d2hyS2U0N1BkbDI3NDY3MjkzNjg",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"prompt\": \"Tolong buatkan task baru di project ID 1 dengan judul 'Fix Login Bug', assign ke user ID 2. Terus sekalian ubah status task ID 1 jadi 'done'.\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3333/ai/command",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3333",
+              "path": [
+                "ai",
+                "command"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Uji Database Rollback",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer oat_Nw.a19ZMFp5bHhRaWtnd0tfbjUyNElkQnFycHpZTkZ2d2hyS2U0N1BkbDI3NDY3MjkzNjg",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"prompt\": \"Buat task baru di project 1 judul 'Deploy VPS'. Terus hapus task dengan ID 999999.\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3333/ai/command",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3333",
+              "path": [
+                "ai",
+                "command"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Uji Guardrail",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer oat_Nw.a19ZMFp5bHhRaWtnd0tfbjUyNElkQnFycHpZTkZ2d2hyS2U0N1BkbDI3NDY3MjkzNjg",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"prompt\": \"Tolong hapus user dengan ID 1 dan ubah role budi jadi admin.\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3333/ai/command",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3333",
+              "path": [
+                "ai",
+                "command"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Hapus Task",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer oat_Nw.a19ZMFp5bHhRaWtnd0tfbjUyNElkQnFycHpZTkZ2d2hyS2U0N1BkbDI3NDY3MjkzNjg",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"prompt\": \"Hapus task dengan ID 2 dari sistem.\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3333/ai/command",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3333",
+              "path": [
+                "ai",
+                "command"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Autentikasi",
+      "item": [
+        {
+          "name": "Register",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\": \"Tester\", \"email\": \"tester@mail.com\", \"password\": \"password123\", \"role\": \"admin\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3333/register",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3333",
+              "path": [
+                "register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "login user biasa",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"email\": \"budi@mail.com\",\r\n  \"password\": \"password123\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3333/login",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3333",
+              "path": [
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "login admin",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"email\": \"admin@mail.com\",\r\n  \"password\": \"password123\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3333/login",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3333",
+              "path": [
+                "login"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Project (User)",
+      "item": [
+        {
+          "name": "Melihat seluruh daftar proyek",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        },
+        {
+          "name": "Melihat semua tugas di dalam suatu proyek",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
